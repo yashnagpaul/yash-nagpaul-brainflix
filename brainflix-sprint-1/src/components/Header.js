@@ -4,12 +4,12 @@ import mohanMuruge from "../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
   return (
-    <header>
+    <header className="">
       <img src={logo} alt="BrainFlix Logo" />
-      <input type="search"></input>
-      <div>
-        <input type="button" value="+ UPLOAD"></input>
-        <img src={mohanMuruge} alt="" />
+      <input type="search" className=""></input>
+      <div className="">
+        <input type="button" value="+ UPLOAD" className=""></input>
+        <img src={mohanMuruge} alt="image of the current user" className="" />
       </div>
     </header>
   );
