@@ -1,1 +1,74 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: "avenir-regular";
+  src: url("../assets/fonts/avenir-next-regular.otf");
+}
+
+@font-face {
+  font-family: "avenir-demi";
+  src: url("../assets/fonts/avenir-next-demi.otf");
+}
+
+@font-face {
+  font-family: "avenir-bold";
+  src: url("../assets/fonts/avenir-next-bold.otf");
+}
+
+html,
+head,
+body {
+  margin: -4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "avenir-regular";
+  color: #323232;
+}
+
+* {
+  margin: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  width: 150px;
+}
+
+.header__submit-btn {
+  background-color: #0095ff;
+  border: 0px;
+  border-radius: 3px;
+  padding: 10px;
+  width: 60%;
+}
+
+.header__user-img {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  -o-object-position: left;
+     object-position: left;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-video {
+  width: 100px;
+}
+
+.video-list__img {
+  width: 100px;
+}
+/*# sourceMappingURL=main.css.map */

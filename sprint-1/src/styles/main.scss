@@ -1,0 +1,58 @@
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/utility";
+
+// GLOBAL RESETS
+
+html,
+head,
+body {
+  margin: -4;
+  box-sizing: border-box;
+  font-family: "avenir-regular";
+  color: $paragraph-text-color;
+}
+
+* {
+  margin: inherit;
+  box-sizing: inherit;
+}
+
+// HEADER
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__logo {
+    width: 150px;
+  }
+  &__submit-btn {
+    @include primary-CTA;
+    width: 60%;
+  }
+  &__user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-position: left;
+    object-fit: cover;
+  }
+}
+
+// MAIN VIDEO SECTION
+
+.main-video {
+  width: 100px;
+}
+
+// VIDEO-SECTION
+
+.video-list {
+  &__video-item {
+  }
+  &__img {
+    width: 100px;
+  }
+}

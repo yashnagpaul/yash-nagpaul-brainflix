@@ -1,0 +1,8 @@
+// UTILITY CLASSES
+
+@mixin primary-CTA {
+  background-color: $primary-CTA-and-text-link;
+  border: 0px;
+  border-radius: 3px;
+  padding: 10px;
+}
