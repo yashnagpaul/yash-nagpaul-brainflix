@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo/Logo-brainflix.png";
+import logo from "../assets/logo/Logo-brainflix.svg";
 import mohanMuruge from "../assets/images/Mohan-muruge.jpg";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
         className="header__search-bar"
         placeholder="Search..."
       ></input>
-      <div className="">
+      <div className="header__button-img-container">
         <input
           type="button"
           value="+ UPLOAD"

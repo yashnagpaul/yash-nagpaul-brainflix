@@ -1,9 +1,9 @@
 @import "./partials/fonts";
 @import "./partials/variables";
 @import "./partials/utility";
+@import "./partials/text-sizes";
 
 // GLOBAL RESETS
-
 html,
 head,
 body {
@@ -18,19 +18,41 @@ body {
   box-sizing: inherit;
 }
 
-// HEADER
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
 
+// HEADER
 .header {
+  padding: 5px 17px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   &__logo {
     width: 150px;
+    margin: 10px;
+  }
+
+  &__search-bar {
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    @extend .selected-text-input;
+  }
+
+  &__button-img-container {
+    justify-content: space-between;
+    width: 100%;
   }
   &__submit-btn {
     @include primary-CTA;
-    width: 60%;
+    padding: 15px;
+    min-width: 80%;
   }
   &__user-img {
     height: 48px;
@@ -38,21 +60,178 @@ body {
     border-radius: 50%;
     object-position: left;
     object-fit: cover;
+    margin-bottom: -17px;
+    float: right;
   }
 }
 
 // MAIN VIDEO SECTION
-
 .main-video {
-  width: 100px;
+  &__video {
+    width: 100vw;
+  }
+}
+
+// CURRENT VIDEO DESCRIPTION
+.video-description {
+  padding: 17px;
+
+  &__title {
+    font-family: "avenir-bold";
+    margin-bottom: 15px;
+  }
+  &__date-channel-container {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__channel-name {
+    font-family: "avenir-demi";
+    margin-right: 10px;
+  }
+  &__date-posted {
+    @include mobile-h4-para;
+    color: $text-label-color;
+  }
+  &__views-likes-container {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid lightgrey;
+  }
+  &__views {
+    margin-right: 10px;
+  }
+  &__likes {
+    margin-left: 10px;
+  }
+  &__description {
+    @include mobile-h4-para;
+  }
+}
+
+// NEW COMMENT + FORM
+
+.new-comment {
+  padding: 17px;
+
+  &__number-of-comments {
+    font-family: "avenir-demi";
+    margin-bottom: 25px;
+  }
+  &__user-img-comment-container {
+    display: flex;
+    min-width: 90vw; //Question for devs: even after this property, the width seems to
+    justify-content: space-between;
+  }
+
+  &__user-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+    margin-right: 15px;
+    margin-top: 24px;
+  }
+  &__title {
+    @include mobile-desk-h5;
+    margin-bottom: 4px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+  }
+
+  &__textarea {
+    @extend .selected-text-input;
+    height: 80px;
+    margin-bottom: 14px;
+    padding: 10px;
+  }
+  &__submit-btn {
+    @include primary-CTA;
+  }
+}
+// COMMENTS SECTION (comment item)
+
+.comment {
+  padding-left: 65px;
+  padding-right: 17px;
+  padding-top: 17px;
+
+  &__name-date-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      left: -53px;
+      top: 3px;
+      background-color: lightgrey;
+    }
+  }
+
+  &__name {
+    @include desk-h4-para;
+    font-family: "avenir-demi";
+  }
+
+  &__timestamp {
+    @include desk-h4-para;
+    color: $text-label-color;
+  }
+
+  &__content {
+    @include desk-h4-para;
+    padding-bottom: 20px;
+    border-bottom: solid 1px lightgrey;
+  }
 }
 
 // VIDEO-SECTION
 
 .video-list {
-  &__video-item {
+  list-style: none;
+  padding: 17px;
+
+  &__heading-label {
+    @include mobile-desk-h5;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
+
+  &__item {
+    display: flex;
+    padding: 10px 0px 10px;
+  }
+
   &__img {
-    width: 100px;
+    width: 34vw;
+    height: 22vw;
+    border-radius: 5%;
+    margin-right: 20px;
   }
+
+  &__title-name-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include desk-h4-para;
+    font-family: "avenir-demi";
+  }
+
+  &__name {
+    @include desk-h4-para;
+  }
+}
+
+.comments-list {
+  list-style: none;
 }

@@ -1,10 +1,13 @@
 import React from "react";
-import Video from "../assets/videos/brainstation-sample-video.mp4";
 
-const MainVideo = () => {
+const MainVideo = (props) => {
   return (
     <div className="main-video">
-      <video src={Video}></video>
+      <video
+        className="main-video__video"
+        poster={props.video.image}
+        src={props.video.src}
+      ></video>
     </div>
   );
 };

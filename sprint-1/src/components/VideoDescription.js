@@ -2,17 +2,17 @@ import React from "react";
 
 const VideoDescription = () => {
   return (
-    <section>
-      <h1>BMX Rampage: 2018 Highlights</h1>
-      <div>
-        <p>By Red Cow</p>
-        <p>12/18/2018</p>
+    <section className="video-description">
+      <h1 className="video-description__title">BMX Rampage: 2018 Highlights</h1>
+      <div className="video-description__date-channel-container">
+        <p className="video-description__channel-name">By Red Cow</p>
+        <p className="video-description__date-posted">12/18/2018</p>
       </div>
-      <div>
-        <p>1,001,023 </p>
-        <p>110,985</p>
+      <div className="video-description__views-likes-container">
+        <p className="video-description__views">1,001,023 </p>
+        <p className="video-description__likes">110,985</p>
       </div>
-      <p>
+      <p className="video-description__description">
         On a gusty day in Southern Utah, a group of 25 daring mountain bikers
         blew the doors off what is possible on two wheels, unleashing some of
         the biggest moments the sport has ever seen. While mother nature only

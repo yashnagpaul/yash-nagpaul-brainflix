@@ -13,6 +13,28 @@
   src: url("../assets/fonts/avenir-next-bold.otf");
 }
 
+.selected-text-input, .header__search-bar, .new-comment__textarea {
+  background-color: #fafafa;
+  border-radius: 5px;
+  outline-color: black;
+  border: 1.5px solid #e1e1e1;
+}
+
+/* ============
+UTILITY CLASSES
+============ */
+/* = = = = = = = = = = = = = = =
+  = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = = = 
+  = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = = = 
+  = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = = = 
+  = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = = = 
+  = = = = = = = = = = = = = = = */
+/* = = = = = = = = = = = = = = = 
+  = = = = = = = = = = = = = = = */
 html,
 head,
 body {
@@ -29,7 +51,15 @@ body {
           box-sizing: inherit;
 }
 
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
+  padding: 5px 17px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,14 +74,32 @@ body {
 
 .header__logo {
   width: 150px;
+  margin: 10px;
+}
+
+.header__search-bar {
+  height: 50px;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.header__button-img-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 .header__submit-btn {
   background-color: #0095ff;
+  color: #fafafa;
+  font-family: "avenir-demi";
   border: 0px;
   border-radius: 3px;
   padding: 10px;
-  width: 60%;
+  padding: 15px;
+  min-width: 80%;
 }
 
 .header__user-img {
@@ -62,13 +110,223 @@ body {
      object-position: left;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: -17px;
+  float: right;
 }
 
-.main-video {
-  width: 100px;
+.main-video__video {
+  width: 100vw;
+}
+
+.video-description {
+  padding: 17px;
+}
+
+.video-description__title {
+  font-family: "avenir-bold";
+  margin-bottom: 15px;
+}
+
+.video-description__date-channel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.video-description__channel-name {
+  font-family: "avenir-demi";
+  margin-right: 10px;
+}
+
+.video-description__date-posted {
+  font-size: 13px;
+  line-height: 18px;
+  color: #afafaf;
+}
+
+.video-description__views-likes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.video-description__views {
+  margin-right: 10px;
+}
+
+.video-description__likes {
+  margin-left: 10px;
+}
+
+.video-description__description {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.new-comment {
+  padding: 17px;
+}
+
+.new-comment__number-of-comments {
+  font-family: "avenir-demi";
+  margin-bottom: 25px;
+}
+
+.new-comment__user-img-comment-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 90vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.new-comment__user-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
+  margin-right: 15px;
+  margin-top: 24px;
+}
+
+.new-comment__title {
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+  font-family: "avenir-demi";
+  margin-bottom: 4px;
+}
+
+.new-comment__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 225px;
+}
+
+.new-comment__textarea {
+  height: 80px;
+  margin-bottom: 14px;
+  padding: 10px;
+}
+
+.new-comment__submit-btn {
+  background-color: #0095ff;
+  color: #fafafa;
+  font-family: "avenir-demi";
+  border: 0px;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.comment {
+  padding-left: 65px;
+  padding-right: 17px;
+  padding-top: 17px;
+}
+
+.comment__name-date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.comment__name-date-container::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  left: -53px;
+  top: 3px;
+  background-color: lightgrey;
+}
+
+.comment__name {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi";
+}
+
+.comment__timestamp {
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
+}
+
+.comment__content {
+  font-size: 14px;
+  line-height: 22px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px lightgrey;
+}
+
+.video-list {
+  list-style: none;
+  padding: 17px;
+}
+
+.video-list__heading-label {
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+  font-family: "avenir-demi";
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.video-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0px 10px;
 }
 
 .video-list__img {
-  width: 100px;
+  width: 34vw;
+  height: 22vw;
+  border-radius: 5%;
+  margin-right: 20px;
+}
+
+.video-list__title-name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.video-list__title {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi";
+}
+
+.video-list__name {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.comments-list {
+  list-style: none;
 }
 /*# sourceMappingURL=main.css.map */
