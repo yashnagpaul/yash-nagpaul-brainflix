@@ -8,12 +8,18 @@
     justify-content: space-evenly;
     padding: 25px 17px 0px;
   }
+  @include desktop {
+    justify-content: center;
+  }
 
   &__logo {
-    width: 150px;
-    margin: 10px;
+    width: 130px;
+    margin: 12px;
     @include tablet {
       margin-right: 170px;
+    }
+    @include desktop {
+      margin-right: 509px;
     }
   }
 
@@ -26,13 +32,19 @@
     @include tablet {
       margin-bottom: 0;
     }
+    @include desktop {
+      max-width: 300px;
+    }
   }
 
   &__button-img-container {
     justify-content: space-between;
     width: 100%;
-    // @include tablet {
-    // }
+
+    @include desktop {
+      justify-content: left;
+      width: auto;
+    }
   }
   &__submit-btn {
     @include primary-CTA;
@@ -52,6 +64,9 @@
     object-fit: cover;
     margin-bottom: -17px;
     float: right;
+    @include desktop {
+      float: none;
+    }
   }
 }
 

@@ -8,6 +8,7 @@
     display: flex;
     min-width: 90vw; //Question for devs: even after this property, the width seems to
     justify-content: space-between;
+    border-bottom: solid 1px lightgrey;
     @include tablet {
       justify-content: left;
     }
@@ -41,7 +42,7 @@
     font-family: inherit;
     @extend .selected-text-input;
     height: 80px;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 10px;
     @include tablet {
       height: 50px;
@@ -51,6 +52,7 @@
   }
   &__submit-btn {
     @include primary-CTA;
+    margin-bottom: 24px;
     @include tablet {
       height: 50px;
       min-width: 160px;

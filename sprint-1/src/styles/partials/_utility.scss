@@ -6,14 +6,17 @@
   font-family: "avenir-demi";
   border: 0px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 16px;
+  &:hover {
+    background-color: $brainflix-blue;
+  }
 }
 
 .selected-text-input {
   background-color: #fafafa;
   border-radius: 5px;
-  outline-color: black;
-  border: 1.5px solid $text-field-border;
+  outline-color: $brainflix-blue-light;
+  border: 1px solid $text-field-border;
 }
 
 /* ============

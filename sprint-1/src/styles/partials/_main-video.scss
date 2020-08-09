@@ -1,8 +1,84 @@
 .main-video {
-  padding: 17px;
+  // padding-top: 17px;
+  position: relative;
 
   &__video {
     width: 100vw;
-    margin-left: -18px;
+    object-fit: cover;
+  }
+
+  &__controls {
+    position: absolute;
+    z-index: 99;
+    bottom: 15px;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__btn {
+    padding: 0.625rem;
+    margin: 0 0.187rem;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    border: unset;
+    box-shadow: unset;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      background: rgba(black, 1);
+      outline: 0;
+    }
+  }
+
+  &__btn-group {
+    display: flex;
+  }
+
+  &__progress-bar {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 0.187rem;
+    padding: 0.625rem;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__progress-timeline {
+    height: 0.187rem;
+    margin-right: 0.625rem;
+    background: grey;
+    flex-grow: 1;
+  }
+
+  &__progress-scrubber {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    left: 0.624rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__progress-text {
+    text-align: center;
+    display: none;
+    @include tablet {
+      display: flex;
+    }
   }
 }
+
+// SOURCE for 'controls' code: https://codepen.io/Onomicon/pen/QWjVqaj?editors=1100
+// Please note: I have understood the code as is made evident by the modifications that I have made in the code

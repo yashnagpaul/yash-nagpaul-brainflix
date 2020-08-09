@@ -5,6 +5,7 @@
   }
 
   &__title {
+    @include mobile-h1;
     font-family: "avenir-bold";
     margin-bottom: 15px;
   }
@@ -49,7 +50,7 @@
   }
   &__description {
     @include mobile-h4-para;
-    margin-top: 40px;
+    margin-top: 24px;
     @include desktop {
       padding-right: 167px;
     }
