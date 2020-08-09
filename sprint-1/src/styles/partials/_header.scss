@@ -1,0 +1,58 @@
+.header {
+  padding: 5px 17px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 25px 17px 0px;
+  }
+
+  &__logo {
+    width: 150px;
+    margin: 10px;
+    @include tablet {
+      margin-right: 170px;
+    }
+  }
+
+  &__search-bar {
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    @extend .selected-text-input;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button-img-container {
+    justify-content: space-between;
+    width: 100%;
+    // @include tablet {
+    // }
+  }
+  &__submit-btn {
+    @include primary-CTA;
+    padding: 15px;
+    min-width: 80%;
+    @include tablet {
+      padding: 15px;
+      min-width: auto;
+      margin: 0px 24px;
+    }
+  }
+  &__user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-position: left;
+    object-fit: cover;
+    margin-bottom: -17px;
+    float: right;
+  }
+}
+
+// TABLET STYLING

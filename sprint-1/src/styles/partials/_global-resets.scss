@@ -5,15 +5,15 @@ DEFAULT RESETS
 html,
 head,
 body {
-  box-sizing: border-box;
   margin: -4;
-  color: #323232;
+  box-sizing: border-box;
+  font-family: "avenir-regular";
+  color: $paragraph-text-color;
 }
 
 *,
 *::before,
 *::after {
-  font-family: "avenir-regular";
   margin: inherit;
   box-sizing: inherit;
 }

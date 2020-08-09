@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "./components/Header";
-import MainVideo from "./components/MainVideo";
-import VideoDescription from "./components/VideoDescription";
-import NewComment from "./components/NewComment";
-import CommentList from "./components/CommentList";
+import Header from "./components/Header.jsx";
+import MainVideo from "./components/MainVideo.jsx";
 import VideoList from "./components/VideoList/VideoList";
-// import video from "./assets/videos/brainstation-sample-video.mp4";
+import CommentDescription from "./components/CommentDescription";
+
 import "./styles/main.css";
 
 class App extends React.Component {
@@ -22,29 +20,27 @@ class App extends React.Component {
       duration: "type of <string>",
       src: "/videos/brainstation-sample-video.mp4",
       timestamp: "12/18/2018",
-      comments: "type of <array>",
+      comments: [
+        {
+          name: "Micheal Lyons",
+          timestamp: 1530744338878,
+          comment:
+            "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
+        },
+        {
+          name: "Gary Wong",
+          timestamp: 1530744338878,
+          comment:
+            "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
+        },
+        {
+          name: "Theodore Duncan",
+          timestamp: 1530744138878,
+          comment:
+            "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
+        },
+      ],
     },
-
-    commentList: [
-      {
-        name: "Micheal Lyons",
-        timestamp: 1530744338878,
-        comment:
-          "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of acconcert I have EVER witnessed.",
-      },
-      {
-        name: "Gary Wong",
-        timestamp: 1530744338878,
-        comment:
-          "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-      },
-      {
-        name: "Theodore Duncan",
-        timestamp: 1530744138878,
-        comment:
-          "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
-      },
-    ],
 
     sidebarVideos: [
       {
@@ -95,10 +91,10 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <MainVideo video={this.state.mainVideo} />
-        <VideoDescription />
-        <NewComment />
-        <CommentList comments={this.state.commentList} />
-        <VideoList videos={this.state.sidebarVideos} />
+        <div className="App__MainVideo-and-VideoList-container">
+          {CommentDescription(this.state.mainVideo)}
+          <VideoList videos={this.state.sidebarVideos} />
+        </div>
       </div>
     );
   }

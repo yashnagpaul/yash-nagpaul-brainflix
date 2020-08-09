@@ -1,0 +1,38 @@
+.video-list {
+  list-style: none;
+  padding: 17px;
+  @include desktop {
+    width: 350px;
+  }
+
+  &__heading-label {
+    @include mobile-desk-h5;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    display: flex;
+    padding: 10px 0px 10px;
+  }
+
+  &__img {
+    width: 120px;
+    height: 75px;
+    border-radius: 5%;
+    margin-right: 20px;
+  }
+
+  &__title-name-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include desk-h4-para;
+    font-family: "avenir-demi";
+  }
+
+  &__name {
+    @include desk-h4-para;
+  }
+}

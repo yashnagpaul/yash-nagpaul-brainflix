@@ -35,6 +35,9 @@ UTILITY CLASSES
   = = = = = = = = = = = = = = = */
 /* = = = = = = = = = = = = = = = 
   = = = = = = = = = = = = = = = */
+/* ===========
+DEFAULT RESETS
+=========== */
 html,
 head,
 body {
@@ -45,7 +48,9 @@ body {
   color: #323232;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: inherit;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
@@ -56,6 +61,12 @@ ol,
 li {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
 }
 
 .header {
@@ -72,9 +83,28 @@ li {
           align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 25px 17px 0px;
+  }
+}
+
 .header__logo {
   width: 150px;
   margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 170px;
+  }
 }
 
 .header__search-bar {
@@ -82,6 +112,12 @@ li {
   width: 100%;
   padding: 5px;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .header__search-bar {
+    margin-bottom: 0;
+  }
 }
 
 .header__button-img-container {
@@ -96,10 +132,18 @@ li {
   color: #fafafa;
   font-family: "avenir-demi";
   border: 0px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 10px;
   padding: 15px;
   min-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+  .header__submit-btn {
+    padding: 15px;
+    min-width: auto;
+    margin: 0px 24px;
+  }
 }
 
 .header__user-img {
@@ -114,12 +158,23 @@ li {
   float: right;
 }
 
+.main-video {
+  padding: 17px;
+}
+
 .main-video__video {
   width: 100vw;
+  margin-left: -18px;
 }
 
 .video-description {
   padding: 17px;
+}
+
+@media screen and (min-width: 1440px) {
+  .video-description {
+    width: 751px;
+  }
 }
 
 .video-description__title {
@@ -127,11 +182,34 @@ li {
   margin-bottom: 15px;
 }
 
+.video-description__date-channel-views-likes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid lightgrey;
+}
+
+@media screen and (min-width: 768px) {
+  .video-description__date-channel-views-likes-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .video-description__date-channel-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .video-description__channel-name {
@@ -149,29 +227,40 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 20px;
-  border-bottom: 1px solid lightgrey;
+  margin-bottom: 12px;
+}
+
+.video-description__views-icon {
+  margin-right: 8px;
 }
 
 .video-description__views {
-  margin-right: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  margin-right: 20px;
 }
 
 .video-description__likes {
-  margin-left: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  margin-left: 8px;
 }
 
 .video-description__description {
   font-size: 13px;
   line-height: 18px;
+  margin-top: 40px;
 }
 
-.new-comment {
-  padding: 17px;
+@media screen and (min-width: 1440px) {
+  .video-description__description {
+    padding-right: 167px;
+  }
 }
 
 .new-comment__number-of-comments {
   font-family: "avenir-demi";
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
@@ -183,6 +272,14 @@ li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .new-comment__user-img-comment-container {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
 }
 
 .new-comment__user-img {
@@ -216,10 +313,28 @@ li {
   width: 225px;
 }
 
+@media screen and (min-width: 768px) {
+  .new-comment__form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .new-comment__textarea {
+  font-family: inherit;
   height: 80px;
   margin-bottom: 14px;
   padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .new-comment__textarea {
+    height: 50px;
+    min-width: 440px;
+    margin-right: 16px;
+  }
 }
 
 .new-comment__submit-btn {
@@ -227,8 +342,19 @@ li {
   color: #fafafa;
   font-family: "avenir-demi";
   border: 0px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .new-comment__submit-btn {
+    height: 50px;
+    min-width: 160px;
+  }
+}
+
+.comments-list {
+  list-style: none;
 }
 
 .comment {
@@ -282,12 +408,17 @@ li {
   padding: 17px;
 }
 
+@media screen and (min-width: 1440px) {
+  .video-list {
+    width: 350px;
+  }
+}
+
 .video-list__heading-label {
   font-size: 12px;
   line-height: 20px;
   color: #afafaf;
   font-family: "avenir-demi";
-  margin-top: 25px;
   margin-bottom: 25px;
 }
 
@@ -299,8 +430,8 @@ li {
 }
 
 .video-list__img {
-  width: 34vw;
-  height: 22vw;
+  width: 120px;
+  height: 75px;
   border-radius: 5%;
   margin-right: 20px;
 }
@@ -326,7 +457,25 @@ li {
   line-height: 22px;
 }
 
-.comments-list {
-  list-style: none;
+.App__MainVideo-and-VideoList-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .App__MainVideo-and-VideoList-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 /*# sourceMappingURL=main.css.map */
