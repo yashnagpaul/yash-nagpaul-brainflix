@@ -8,6 +8,9 @@
     @include mobile-h1;
     font-family: "avenir-bold";
     margin-bottom: 15px;
+    @include tablet {
+      @include desk-h1;
+    }
   }
 
   &__date-channel-views-likes-container {
@@ -17,6 +20,9 @@
     @include tablet {
       flex-direction: row;
       justify-content: space-between;
+    }
+    @include desktop {
+      padding-top: 10px;
     }
   }
 
@@ -47,11 +53,15 @@
   &__likes {
     @include desk-h4-para;
     margin-left: 8px;
+    margin-right: 32px;
   }
   &__description {
     @include mobile-h4-para;
     margin-top: 24px;
-    @include desktop {
+    @include tablet {
+      @include desk-h4-para;
+      font-size: 14.6px;
+      margin-bottom: 58px;
       padding-right: 167px;
     }
   }

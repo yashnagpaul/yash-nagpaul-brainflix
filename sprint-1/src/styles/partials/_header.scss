@@ -6,7 +6,7 @@
   @include tablet {
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 25px 17px 0px;
+    padding: 16px 17px 16px;
   }
   @include desktop {
     justify-content: center;
@@ -17,6 +17,7 @@
     margin: 12px;
     @include tablet {
       margin-right: 170px;
+      height: 30px;
     }
     @include desktop {
       margin-right: 509px;
@@ -26,14 +27,14 @@
   &__search-bar {
     height: 50px;
     width: 100%;
-    padding: 5px;
+    padding: 15px;
     margin-bottom: 10px;
     @extend .selected-text-input;
     @include tablet {
       margin-bottom: 0;
     }
     @include desktop {
-      max-width: 300px;
+      max-width: 235px;
     }
   }
 
@@ -42,7 +43,6 @@
     width: 100%;
 
     @include desktop {
-      justify-content: left;
       width: auto;
     }
   }
@@ -53,7 +53,11 @@
     @include tablet {
       padding: 15px;
       min-width: auto;
-      margin: 0px 24px;
+      margin: 0px 0px 0px 36px;
+    }
+    @include desktop {
+      margin-right: 24px;
+      margin-left: 24px;
     }
   }
   &__user-img {
@@ -69,5 +73,3 @@
     }
   }
 }
-
-// TABLET STYLING

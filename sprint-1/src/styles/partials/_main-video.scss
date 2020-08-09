@@ -1,10 +1,19 @@
 .main-video {
-  // padding-top: 17px;
+  background-color: #000000;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   &__video {
     width: 100vw;
-    object-fit: cover;
+    @include tablet {
+      padding-left: auto;
+      padding-right: auto;
+      width: 90vw;
+    }
+    @include desktop {
+      width: 944px;
+    }
   }
 
   &__controls {
@@ -15,13 +24,19 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 6%;
+    @include desktop {
+      padding-left: 18%;
+      padding-right: 18%;
+    }
   }
 
   &__btn {
-    padding: 0.625rem;
-    margin: 0 0.187rem;
+    display: flex;
+    width: 90px;
+    padding: 8px;
+    margin: 0 8px;
     border-radius: 0.187rem;
     color: white;
     background: rgba(black, 0.6);
@@ -34,23 +49,30 @@
       background: rgba(black, 1);
       outline: 0;
     }
+    &--play {
+      width: 45px;
+    }
   }
 
   &__btn-group {
+    width: 90px;
+
     display: flex;
   }
 
   &__progress-bar {
     position: relative;
     flex-grow: 1;
-    margin: 0 0.187rem;
-    padding: 0.625rem;
+    padding: 8px;
     border-radius: 0.187rem;
     color: white;
     background: rgba(black, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include tablet {
+      margin: 0 8px;
+    }
   }
 
   &__progress-timeline {

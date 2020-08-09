@@ -4,7 +4,7 @@ const MainVideo = (props) => {
   return (
     <div className="main-video">
       <div className="main-video__controls">
-        <button className="main-video__btn">
+        <button className="main-video__btn main-video__btn--play ">
           <img src="/icons/SVG/Icon-play.svg" alt="" />
         </button>
         <div className="main-video__progress-bar">
@@ -16,8 +16,6 @@ const MainVideo = (props) => {
         <div className="main-video__btn-group">
           <button className="main-video__btn">
             <img src="/icons/SVG/Icon-fullscreen.svg" alt="" />
-          </button>
-          <button className="main-video__btn">
             <img src="/icons/SVG/Icon-volume.svg" alt="" />
           </button>
         </div>
