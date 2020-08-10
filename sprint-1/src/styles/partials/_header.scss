@@ -29,6 +29,11 @@
     width: 100%;
     padding: 15px;
     margin-bottom: 10px;
+    position: relative;
+    text-indent: 25px;
+    background-image: url(../assets/icons/SVG/Icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 12px;
     @extend .selected-text-input;
     @include tablet {
       margin-bottom: 0;
@@ -47,10 +52,14 @@
     }
   }
   &__submit-btn {
+    background-image: url(../assets/icons/SVG/Icon-upload.svg);
+    background-repeat: no-repeat;
+    background-position: 35%;
     @include primary-CTA;
     padding: 15px;
     min-width: 80%;
     @include tablet {
+      background-position: 12px;
       padding: 15px;
       min-width: auto;
       margin: 0px 0px 0px 36px;

@@ -9,12 +9,12 @@ const Header = () => {
       <input
         type="search"
         className="header__search-bar"
-        placeholder="Search..."
+        placeholder="Search"
       ></input>
       <div className="header__button-img-container">
         <input
           type="button"
-          value="+ UPLOAD"
+          value="      UPLOAD"
           className="header__submit-btn"
         ></input>
         <img

@@ -127,6 +127,11 @@ a {
   width: 100%;
   padding: 15px;
   margin-bottom: 10px;
+  position: relative;
+  text-indent: 25px;
+  background-image: url(../assets/icons/SVG/Icon-search.svg);
+  background-repeat: no-repeat;
+  background-position: 12px;
 }
 
 @media screen and (min-width: 768px) {
@@ -155,6 +160,9 @@ a {
 }
 
 .header__submit-btn {
+  background-image: url(../assets/icons/SVG/Icon-upload.svg);
+  background-repeat: no-repeat;
+  background-position: 35%;
   background-color: #0095ff;
   color: #fafafa;
   font-family: "avenir-demi";
@@ -171,6 +179,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .header__submit-btn {
+    background-position: 12px;
     padding: 15px;
     min-width: auto;
     margin: 0px 0px 0px 36px;
@@ -572,6 +581,12 @@ a {
   padding-left: 50px;
   padding-top: 17px;
   border-bottom: solid 1px lightgrey;
+}
+
+@media screen and (min-width: 768px) {
+  .comment {
+    padding-right: 28.5px;
+  }
 }
 
 @media screen and (min-width: 1440px) {

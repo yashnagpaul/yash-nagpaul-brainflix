@@ -2,14 +2,13 @@ import React from "react";
 import NewComment from "./NewComment";
 import CommentItem from "./CommentItem";
 
-const CommentDescription = (props) => {
-  console.log(props.comments);
+const VideoDescription = (props) => {
   return (
     <div className="video-description">
       <h1 className="video-description__title">{props.title}</h1>
       <div className="video-description__date-channel-views-likes-container">
         <div className="video-description__date-channel-container">
-          <p className="video-description__channel-name">{props.channel}</p>
+          <p className="video-description__channel-name">By {props.channel}</p>
           <p className="video-description__date-posted">{props.timestamp}</p>
         </div>
 
@@ -49,4 +48,4 @@ const CommentDescription = (props) => {
   );
 };
 
-export default CommentDescription;
+export default VideoDescription;
