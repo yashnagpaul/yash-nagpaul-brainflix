@@ -1,11 +1,12 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import Header from "./components/Header.jsx";
 import MainVideo from "./components/MainVideo.jsx";
 import VideoList from "./components/VideoList/VideoList";
 import VideoDescription from "./components/VideoDescription";
-import "./styles/app.css";
 
-import { v4 as uuidv4 } from "uuid";
+import "./styles/app.css";
 
 class App extends React.Component {
   state = {

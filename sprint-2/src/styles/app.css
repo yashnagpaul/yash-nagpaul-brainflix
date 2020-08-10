@@ -13,7 +13,7 @@
   src: url("../assets/fonts/avenir-next-bold.otf");
 }
 
-.selected-text-input, .header__search-bar, .new-comment__textarea {
+.selected-text-input, .header__search-bar, .new-comment__textarea, .upload-page__title-input, .upload-page__description-input {
   background-color: #fafafa;
   border-radius: 5px;
   outline-color: #0095ff;
@@ -167,7 +167,7 @@ a {
   border-radius: 5px;
   padding: 16px;
   padding: 15px;
-  min-width: 80%;
+  min-width: 75%;
 }
 
 .header__submit-btn:hover {
@@ -717,6 +717,118 @@ a {
 .video-list__name {
   font-size: 14.6px;
   line-height: 22px;
+}
+
+.upload-page {
+  padding: 17px;
+  margin-bottom: 1%;
+}
+
+.upload-page__heading {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+  padding-bottom: 17px;
+}
+
+.upload-page__wraps-thumbnail-title-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .upload-page__wraps-thumbnail-title-description {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.upload-page__thumbnail-label-container {
+  padding-bottom: 10px;
+}
+
+.upload-page__thumbnail-label {
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+  font-family: "avenir-demi";
+}
+
+.upload-page__thumbnail-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 6px;
+}
+
+.upload-page__title-description-container {
+  padding-bottom: 17px;
+}
+
+.upload-page__title-label {
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+  font-family: "avenir-demi";
+}
+
+.upload-page__title-input {
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.upload-page__description-label {
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+  font-family: "avenir-demi";
+}
+
+.upload-page__description-input {
+  width: 100%;
+  height: 170px;
+  padding: 20px;
+}
+
+.upload-page__buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.upload-page__submit-btn {
+  background-color: #0095ff;
+  color: #fafafa;
+  font-family: "avenir-demi";
+  border: 0px;
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 17px;
+}
+
+.upload-page__submit-btn:hover {
+  background-color: #0065ad;
+}
+
+.upload-page__cancel-btn {
+  font-size: 13px;
+  line-height: 18px;
+  color: #0095ff;
+  font-family: "avenir-demi";
+  text-align: center;
+  width: 100%;
 }
 
 .App__MainVideo-and-VideoList-container {
