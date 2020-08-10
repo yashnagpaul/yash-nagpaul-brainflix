@@ -1,0 +1,22 @@
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/utility";
+@import "./partials/text-sizes";
+@import "./partials/global-resets";
+@import "./partials/breakpoint-mixins";
+@import "./partials/header";
+@import "./partials/main-video";
+@import "./partials/current-video-description";
+@import "./partials/new-comment-and-form";
+@import "./partials/comments-conversation";
+@import "./partials/video-list";
+
+.App__MainVideo-and-VideoList-container {
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+  }
+}

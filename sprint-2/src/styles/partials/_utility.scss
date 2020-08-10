@@ -1,0 +1,20 @@
+// UTILITY CLASSES
+
+@mixin primary-CTA {
+  background-color: $primary-CTA-and-text-link;
+  color: #fafafa;
+  font-family: "avenir-demi";
+  border: 0px;
+  border-radius: 5px;
+  padding: 16px;
+  &:hover {
+    background-color: $brainflix-blue;
+  }
+}
+
+.selected-text-input {
+  background-color: #fafafa;
+  border-radius: 5px;
+  outline-color: $brainflix-blue-light;
+  border: 1px solid $text-field-border;
+}

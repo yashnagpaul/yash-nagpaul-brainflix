@@ -1,0 +1,84 @@
+.header {
+  padding: 5px 17px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 16px 17px 16px;
+  }
+  @include desktop {
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 130px;
+    margin: 12px;
+    @include tablet {
+      margin-right: 170px;
+      height: 30px;
+    }
+    @include desktop {
+      margin-right: 509px;
+    }
+  }
+
+  &__search-bar {
+    height: 50px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    text-indent: 25px;
+    background-image: url(../assets/icons/SVG/Icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 12px;
+    @extend .selected-text-input;
+    @include tablet {
+      margin-bottom: 0;
+    }
+    @include desktop {
+      max-width: 235px;
+    }
+  }
+
+  &__button-img-container {
+    justify-content: space-between;
+    width: 100%;
+
+    @include desktop {
+      width: auto;
+    }
+  }
+  &__submit-btn {
+    background-image: url(../assets/icons/SVG/Icon-upload.svg);
+    background-repeat: no-repeat;
+    background-position: 35%;
+    @include primary-CTA;
+    padding: 15px;
+    min-width: 80%;
+    @include tablet {
+      background-position: 12px;
+      padding: 15px;
+      min-width: auto;
+      margin: 0px 0px 0px 36px;
+    }
+    @include desktop {
+      margin-right: 24px;
+      margin-left: 24px;
+    }
+  }
+  &__user-img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    object-position: left;
+    object-fit: cover;
+    margin-bottom: -17px;
+    float: right;
+    @include desktop {
+      float: none;
+    }
+  }
+}

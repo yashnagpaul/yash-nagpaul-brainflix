@@ -1,0 +1,106 @@
+.main-video {
+  background-color: #000000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__video {
+    width: 100vw;
+    @include tablet {
+      padding-left: auto;
+      padding-right: auto;
+      width: 90vw;
+    }
+    @include desktop {
+      width: 944px;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    z-index: 99;
+    bottom: 15px;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 6%;
+    @include desktop {
+      padding-left: 18%;
+      padding-right: 18%;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    width: 90px;
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    border: unset;
+    box-shadow: unset;
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      background: rgba(black, 1);
+      outline: 0;
+    }
+    &--play {
+      width: 45px;
+    }
+  }
+
+  &__btn-group {
+    width: 90px;
+
+    display: flex;
+  }
+
+  &__progress-bar {
+    position: relative;
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 0.187rem;
+    color: white;
+    background: rgba(black, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      margin: 0 8px;
+    }
+  }
+
+  &__progress-timeline {
+    height: 0.187rem;
+    margin-right: 0.625rem;
+    background: grey;
+    flex-grow: 1;
+  }
+
+  &__progress-scrubber {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    left: 0.624rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__progress-text {
+    text-align: center;
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
+}
+
+// SOURCE for 'controls' code: https://codepen.io/Onomicon/pen/QWjVqaj?editors=1100
+// Please note: I have understood the code as is made evident by the modifications that I have made in the code

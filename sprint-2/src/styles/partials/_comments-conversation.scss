@@ -1,0 +1,59 @@
+// COMMENTS SECTION (comment item)
+
+.comments-list {
+  list-style: none;
+}
+
+.comment {
+  padding-left: 50px;
+
+  padding-top: 17px;
+  border-bottom: solid 1px lightgrey;
+
+  @include tablet {
+    padding-right: 28.5px;
+  }
+  @include desktop {
+    padding-top: 30px;
+    padding-right: 17px;
+  }
+
+  &__name-date-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      left: -53px;
+      top: 3px;
+      background-color: lightgrey;
+    }
+    @include tablet {
+      justify-content: left;
+    }
+  }
+
+  &__name {
+    @include desk-h4-para;
+    font-family: "avenir-demi";
+    @include tablet {
+      margin-right: 12px;
+    }
+  }
+
+  &__timestamp {
+    @include desk-h4-para;
+    color: $text-label-color;
+  }
+
+  &__content {
+    @include desk-h4-para;
+    font-size: 14.6px;
+    padding-bottom: 20px;
+  }
+}

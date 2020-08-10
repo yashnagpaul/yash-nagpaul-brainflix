@@ -1,0 +1,64 @@
+.new-comment {
+  &__number-of-comments {
+    font-family: "avenir-demi";
+    margin-top: 40px;
+    margin-bottom: 32px;
+  }
+  &__user-img-comment-container {
+    display: flex;
+    min-width: 90vw;
+    justify-content: space-between;
+    border-bottom: solid 1px lightgrey;
+    @include tablet {
+      justify-content: left;
+    }
+    @include desktop {
+      min-width: auto;
+    }
+  }
+
+  &__user-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left;
+    margin-right: 15px;
+    margin-top: 24px;
+  }
+
+  &__title {
+    @include mobile-desk-h5;
+    margin-bottom: 4px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 225px;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__textarea {
+    font-family: inherit;
+    @extend .selected-text-input;
+    height: 80px;
+    margin-bottom: 16px;
+    padding: 15px;
+    @include tablet {
+      height: 50px;
+      min-width: 440px;
+      margin-right: 16px;
+    }
+  }
+  &__submit-btn {
+    @include primary-CTA;
+    margin-bottom: 24px;
+    @include tablet {
+      height: 50px;
+      min-width: 160px;
+    }
+  }
+}

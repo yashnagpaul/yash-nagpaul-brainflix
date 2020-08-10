@@ -1,0 +1,68 @@
+.video-description {
+  padding: 17px;
+  @include desktop {
+    width: 751px;
+  }
+
+  &__title {
+    @include mobile-h1;
+    font-family: "avenir-bold";
+    margin-bottom: 15px;
+    @include tablet {
+      @include desk-h1;
+    }
+  }
+
+  &__date-channel-views-likes-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgrey;
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include desktop {
+      padding-top: 10px;
+    }
+  }
+
+  &__date-channel-container {
+    display: flex;
+    margin-bottom: 12px;
+  }
+  &__channel-name {
+    font-family: "avenir-demi";
+    margin-right: 10px;
+  }
+  &__date-posted {
+    @include mobile-h4-para;
+    color: $text-label-color;
+  }
+  &__views-likes-container {
+    display: flex;
+    margin-bottom: 12px;
+  }
+  &__views-icon {
+    margin-right: 8px;
+  }
+
+  &__views {
+    @include desk-h4-para;
+    margin-right: 20px;
+  }
+  &__likes {
+    @include desk-h4-para;
+    margin-left: 8px;
+    margin-right: 32px;
+  }
+  &__description {
+    @include mobile-h4-para;
+    margin-top: 24px;
+    @include tablet {
+      @include desk-h4-para;
+      font-size: 14.6px;
+      margin-bottom: 58px;
+      padding-right: 167px;
+    }
+  }
+}
