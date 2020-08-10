@@ -6,7 +6,7 @@
   }
   &__user-img-comment-container {
     display: flex;
-    min-width: 90vw; //Question for devs: even after this property, the width seems to
+    min-width: 90vw;
     justify-content: space-between;
     border-bottom: solid 1px lightgrey;
     @include tablet {
