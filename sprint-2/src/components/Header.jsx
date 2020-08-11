@@ -6,7 +6,7 @@ import mohanMuruge from "../assets/images/Mohan-muruge.jpg";
 const Header = () => {
   return (
     <header className="header">
-      <Link exact to="/">
+      <Link to="/">
         <img src={logo} alt="BrainFlix Logo" className="header__logo" />
       </Link>
       <input
@@ -15,7 +15,7 @@ const Header = () => {
         placeholder="Search"
       ></input>
       <div className="header__button-img-container">
-        <Link exact to="/upload">
+        <Link to="/upload">
           <input
             type="button"
             value="      UPLOAD"

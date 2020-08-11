@@ -159,7 +159,7 @@ a {
 .header__submit-btn {
   background-image: url(../assets/icons/SVG/Icon-upload.svg);
   background-repeat: no-repeat;
-  background-position: 35%;
+  background-position: 32%;
   background-color: #0095ff;
   color: #fafafa;
   font-family: "avenir-demi";
@@ -721,7 +721,13 @@ a {
 
 .upload-page {
   padding: 17px;
-  margin-bottom: 1%;
+}
+
+@media screen and (min-width: 1440px) {
+  .upload-page {
+    padding-left: 13vw;
+    padding-right: 12.4vw;
+  }
 }
 
 .upload-page__heading {
@@ -729,6 +735,16 @@ a {
   line-height: 32px;
   font-family: "avenir-bold";
   padding-bottom: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__heading {
+    font-size: 36px;
+    line-height: 44px;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+  }
 }
 
 .upload-page__wraps-thumbnail-title-description {
@@ -754,6 +770,18 @@ a {
   padding-bottom: 10px;
 }
 
+@media screen and (min-width: 768px) {
+  .upload-page__thumbnail-label-container {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .upload-page__thumbnail-label-container {
+    width: 35%;
+  }
+}
+
 .upload-page__thumbnail-label {
   font-size: 12px;
   line-height: 20px;
@@ -767,8 +795,38 @@ a {
   border-radius: 6px;
 }
 
+@media screen and (min-width: 768px) {
+  .upload-page__thumbnail-img {
+    width: 50%;
+    height: 25vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .upload-page__thumbnail-img {
+    width: 90%;
+    height: 200px;
+  }
+}
+
 .upload-page__title-description-container {
   padding-bottom: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__title-description-container {
+    padding-bottom: 25px;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .upload-page__title-description-container {
+    width: 65%;
+    height: 200px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+  }
 }
 
 .upload-page__title-label {
@@ -798,6 +856,12 @@ a {
   padding: 20px;
 }
 
+@media screen and (min-width: 1440px) {
+  .upload-page__description-input {
+    height: 110px;
+  }
+}
+
 .upload-page__buttons-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -806,6 +870,22 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__buttons-container {
+    width: 25vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    float: right;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 .upload-page__submit-btn {
@@ -829,6 +909,12 @@ a {
   font-family: "avenir-demi";
   text-align: center;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__cancel-btn {
+    padding: 30px;
+  }
 }
 
 .App__MainVideo-and-VideoList-container {

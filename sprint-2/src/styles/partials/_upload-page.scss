@@ -1,18 +1,27 @@
 .upload-page {
   padding: 17px;
-  margin-bottom: 1%;
+  // margin-bottom: 1%;
+  @include desktop {
+    padding-left: 13vw;
+    padding-right: 12.4vw;
+  }
 
   &__heading {
     @include mobile-h1;
     font-family: "avenir-bold";
     padding-bottom: 17px;
+    @include tablet {
+      @include desk-h1;
+      width: 100%;
+      padding-bottom: 30px;
+      border-bottom: 1px solid lightgray;
+    }
   }
 
   &__wraps-thumbnail-title-description {
     display: flex;
     flex-direction: column;
-    @include tablet {
-    }
+
     @include desktop {
       flex-direction: row;
     }
@@ -20,6 +29,12 @@
 
   &__thumbnail-label-container {
     padding-bottom: 10px;
+    @include tablet {
+      padding-top: 30px;
+    }
+    @include desktop {
+      width: 35%;
+    }
   }
 
   &__thumbnail-label {
@@ -31,13 +46,27 @@
     height: 150px;
     border-radius: 6px;
     @include tablet {
+      width: 50%;
+      height: 25vw;
     }
     @include desktop {
+      width: 90%;
+      height: 200px;
     }
   }
 
   &__title-description-container {
     padding-bottom: 17px;
+    @include tablet {
+      padding-bottom: 25px;
+      border-bottom: 1px solid lightgray;
+    }
+    @include desktop {
+      width: 65%;
+      height: 200px;
+      padding-top: 30px;
+      padding-bottom: 0px;
+    }
   }
 
   &__title-label {
@@ -61,11 +90,21 @@
     width: 100%;
     height: 170px;
     padding: 20px;
+    @include desktop {
+      height: 110px;
+    }
   }
 
   &__buttons-container {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      width: 25vw;
+      flex-direction: row;
+      float: right;
+      align-items: baseline;
+      justify-content: space-around;
+    }
   }
 
   &__submit-btn {
@@ -79,5 +118,13 @@
     font-family: "avenir-demi";
     text-align: center;
     width: 100%;
+    @include tablet {
+      padding: 30px;
+    }
   }
+}
+
+@include tablet {
+}
+@include desktop {
 }
