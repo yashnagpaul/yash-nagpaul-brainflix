@@ -3,6 +3,13 @@ import Header from "../Header";
 import { Link } from "react-router-dom";
 
 export default class UploadPage extends Component {
+  submitHandler = (event) => {
+    event.preventDefault();
+    console.log(event.target.name.value);
+    // try to get the input values from the name attribute
+    // event.target.title.value
+  };
+
   render() {
     return (
       <div>
@@ -20,30 +27,32 @@ export default class UploadPage extends Component {
               />
             </div>
 
-            <div className="upload-page__title-description-container">
+            <form
+              className="upload-page__title-description-container"
+              onSubmit={(event) => this.submitHandler}
+            >
               <p className="upload-page__title-label">TITLE YOUR VIDEO</p>
               <input
                 className="upload-page__title-input"
                 type="text"
-                name=""
+                name="title"
                 id=""
               />
               <p className="upload-page__description-label">
                 ADD A VIDEO DESCRIPTION
               </p>
               <textarea className="upload-page__description-input"></textarea>
-            </div>
-          </div>
-
-          <div className="upload-page__buttons-container">
-            <input
-              className="upload-page__submit-btn"
-              type="submit"
-              value="PUBLISH"
-            />
-            <Link to="/">
-              <p className="upload-page__cancel-btn">CANCEL</p>
-            </Link>
+              <div className="upload-page__buttons-container">
+                <input
+                  className="upload-page__submit-btn"
+                  type="submit"
+                  value="PUBLISH"
+                />
+                <Link to="/">
+                  <p className="upload-page__cancel-btn">CANCEL</p>
+                </Link>
+              </div>
+            </form>
           </div>
         </div>
       </div>
