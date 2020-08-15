@@ -100,7 +100,7 @@
     flex-direction: column;
     @include tablet {
       width: 25vw;
-      flex-direction: row;
+      flex-direction: row-reverse;
       float: right;
       align-items: baseline;
       justify-content: space-around;

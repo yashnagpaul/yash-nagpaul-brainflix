@@ -876,9 +876,9 @@ a {
   .upload-page__buttons-container {
     width: 25vw;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     float: right;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;

@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 export default class UploadPage extends Component {
   submitHandler = (event) => {
     event.preventDefault();
-    console.log(event.target.name.value);
-    // try to get the input values from the name attribute
-    // event.target.title.value
+    alert(
+      `TITLE:${this.refs.title.value} & DESCRIPTION:${this.refs.description.value}`
+    );
   };
 
   render() {
@@ -29,19 +29,21 @@ export default class UploadPage extends Component {
 
             <form
               className="upload-page__title-description-container"
-              onSubmit={(event) => this.submitHandler}
+              onSubmit={this.submitHandler}
             >
               <p className="upload-page__title-label">TITLE YOUR VIDEO</p>
               <input
                 className="upload-page__title-input"
                 type="text"
-                name="title"
-                id=""
+                ref="title"
               />
               <p className="upload-page__description-label">
                 ADD A VIDEO DESCRIPTION
               </p>
-              <textarea className="upload-page__description-input"></textarea>
+              <textarea
+                className="upload-page__description-input"
+                ref="description"
+              ></textarea>
               <div className="upload-page__buttons-container">
                 <input
                   className="upload-page__submit-btn"

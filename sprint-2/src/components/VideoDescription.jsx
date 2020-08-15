@@ -1,55 +1,76 @@
 import React from "react";
 import NewComment from "./NewComment";
 import CommentItem from "./CommentItem";
+// import { render } from "react-dom";
 
-const VideoDescription = ({ video }) => {
-  // if (video.comments === undefined) {
+class VideoDescription extends React.Component {
+  // if (this.props.video.comments === undefined) {
   //   return <p>Loading comments</p>;
   // } else
-  return (
-    <div className="video-description">
-      <h1 className="video-description__title">{video.title}</h1>
-      <div className="video-description__date-channel-views-likes-container">
-        <div className="video-description__date-channel-container">
-          <p className="video-description__channel-name">By {video.channel}</p>
-          <p className="video-description__date-posted">
-            {new Date(video.timestamp).toDateString()}
-          </p>
+
+  render() {
+    console.log(this.props);
+    return (
+      <div className="video-description">
+        <h1 className="video-description__title">{this.props.video.title}</h1>
+        <div className="video-description__date-channel-views-likes-container">
+          <div className="video-description__date-channel-container">
+            <p className="video-description__channel-name">
+              By {this.props.video.channel}
+            </p>
+            <p className="video-description__date-posted">
+              {new Date(this.props.video.timestamp).toDateString()}
+            </p>
+          </div>
+
+          <div className="video-description__views-likes-container">
+            <img
+              className="video-description__views-icon"
+              src="/icons/svg/icon-views.svg"
+              alt=""
+            />
+            <p className="video-description__views">
+              {this.props.video.views}{" "}
+            </p>
+            <img
+              className="video-description__likes-icon"
+              src="/icons/svg/icon-likes.svg"
+              alt=""
+            />
+            <p className="video-description__likes">{this.props.video.likes}</p>
+          </div>
         </div>
+        <p className="video-description__description">
+          {this.props.video.description}
+        </p>
 
-        <div className="video-description__views-likes-container">
-          <img
-            className="video-description__views-icon"
-            src="/icons/svg/icon-views.svg"
-            alt=""
-          />
-          <p className="video-description__views">{video.views} </p>
-          <img
-            className="video-description__likes-icon"
-            src="/icons/svg/icon-likes.svg"
-            alt=""
-          />
-          <p className="video-description__likes">{video.likes}</p>
-        </div>
-      </div>
-      <p className="video-description__description">{video.description}</p>
+        <NewComment videoId={this.props.video.id} />
 
-      <NewComment />
+        <ul className="comments-list">
+          {this.props.video.comments ? (
+            this.props.video.comments
+              .sort((a, b) => b.timestamp - a.timestamp)
+              .map((comment, index) => (
+                <CommentItem key={index} commentData={comment} />
+              ))
+          ) : (
+            <p>Loading Comments</p>
+          )}
 
-      <ul className="comments-list">
-        {video.comments ? (
-          video.comments.map((comment, index) => (
-            <CommentItem key={index} commentData={comment} />
-          ))
-        ) : (
-          <p>Loading Comments</p>
-        )}
-        {/* {video.comments.map((comment, index) => (
+          {/* {this.props.video.comments.map((comment, index) => (
             <CommentItem key={index} commentData={comment} />
           ))} */}
-      </ul>
-    </div>
-  );
-};
+        </ul>
+      </div>
+    );
+  }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.video.comments !== this.props.video.comments) {
+  //     console.log("updated!");
+  //     // this.render();
+  //   }
+  // }
+}
 
 export default VideoDescription;

@@ -12,10 +12,6 @@ ReactDOM.render(
         <Route path="/" component={App} exact />
         <Route path="/videos/:id" component={App} />
         <Route path="/upload" component={UploadPage} />
-        {/* <Route
-          path="/:id"
-          render={(routeProps) => <VideoItem videoData={this.state.videos} />}
-        /> */}
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
