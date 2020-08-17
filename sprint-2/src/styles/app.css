@@ -14,6 +14,7 @@
 }
 
 .selected-text-input, .header__search-bar, .new-comment__textarea, .upload-page__title-input, .upload-page__description-input {
+  font-family: "avenir-regular";
   background-color: #fafafa;
   border-radius: 5px;
   outline-color: #0095ff;
@@ -742,6 +743,7 @@ a {
   .upload-page__heading {
     font-size: 36px;
     line-height: 44px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     padding-bottom: 30px;
   }
@@ -755,6 +757,13 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__wraps-thumbnail-title-description {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -815,8 +824,8 @@ a {
 
 @media screen and (min-width: 768px) {
   .upload-page__title-description-container {
-    padding-bottom: 25px;
-    border-bottom: 1px solid lightgray;
+    padding-bottom: 0px;
+    height: 300px;
   }
 }
 
@@ -825,7 +834,6 @@ a {
     width: 65%;
     height: 200px;
     padding-top: 30px;
-    padding-bottom: 0px;
   }
 }
 
@@ -874,6 +882,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .upload-page__buttons-container {
+    margin-top: 10px;
     width: 25vw;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -905,7 +914,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .upload-page__submit-btn {
-    width: 300px;
+    min-width: 150px;
   }
 }
 
@@ -920,7 +929,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .upload-page__cancel-btn {
-    padding: 30px;
+    padding: 50px;
   }
 }
 

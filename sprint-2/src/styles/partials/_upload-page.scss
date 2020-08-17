@@ -11,6 +11,7 @@
     padding-bottom: 17px;
     @include tablet {
       @include desk-h1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       width: 100%;
       padding-bottom: 30px;
     }
@@ -19,7 +20,10 @@
   &__wraps-thumbnail-title-description {
     display: flex;
     flex-direction: column;
-
+    @include tablet {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
     @include desktop {
       flex-direction: row;
     }
@@ -56,14 +60,13 @@
   &__title-description-container {
     padding-bottom: 17px;
     @include tablet {
-      padding-bottom: 25px;
-      border-bottom: 1px solid lightgray;
+      padding-bottom: 0px;
+      height: 300px;
     }
     @include desktop {
       width: 65%;
       height: 200px;
       padding-top: 30px;
-      padding-bottom: 0px;
     }
   }
 
@@ -97,6 +100,7 @@
     display: flex;
     flex-direction: column;
     @include tablet {
+      margin-top: 10px;
       width: 25vw;
       flex-direction: row-reverse;
       float: right;
@@ -109,7 +113,7 @@
     @include primary-CTA;
     margin-bottom: 17px;
     @include tablet {
-      width: 300px;
+      min-width: 150px;
     }
   }
 
@@ -120,12 +124,7 @@
     text-align: center;
     width: 100%;
     @include tablet {
-      padding: 30px;
+      padding: 50px;
     }
   }
-}
-
-@include tablet {
-}
-@include desktop {
 }

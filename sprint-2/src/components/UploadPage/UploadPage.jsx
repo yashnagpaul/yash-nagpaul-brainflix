@@ -36,6 +36,7 @@ export default class UploadPage extends Component {
                 className="upload-page__title-input"
                 type="text"
                 ref="title"
+                placeholder="Add a title to your video"
               />
               <p className="upload-page__description-label">
                 ADD A VIDEO DESCRIPTION
@@ -43,6 +44,7 @@ export default class UploadPage extends Component {
               <textarea
                 className="upload-page__description-input"
                 ref="description"
+                placeholder="Add a description of your video"
               ></textarea>
               <div className="upload-page__buttons-container">
                 <input
