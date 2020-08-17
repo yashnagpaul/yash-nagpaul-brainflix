@@ -50,12 +50,6 @@ class MainVideo extends React.Component {
       );
     } else return <p>fetching data</p>;
   }
-
-  componentDidUpdate() {
-    //QUESTION: Is componentDidUpdate even required
-
-    this.render();
-  }
 }
 
 export default MainVideo;

@@ -1,6 +1,5 @@
 .upload-page {
   padding: 17px;
-  // margin-bottom: 1%;
   @include desktop {
     padding-left: 13vw;
     padding-right: 12.4vw;
@@ -14,7 +13,6 @@
       @include desk-h1;
       width: 100%;
       padding-bottom: 30px;
-      border-bottom: 1px solid lightgray;
     }
   }
 
@@ -103,13 +101,16 @@
       flex-direction: row-reverse;
       float: right;
       align-items: baseline;
-      justify-content: space-around;
+      justify-content: right;
     }
   }
 
   &__submit-btn {
     @include primary-CTA;
     margin-bottom: 17px;
+    @include tablet {
+      width: 300px;
+    }
   }
 
   &__cancel-btn {

@@ -1,15 +1,9 @@
 import React from "react";
 import NewComment from "./NewComment";
 import CommentItem from "./CommentItem";
-// import { render } from "react-dom";
 
 class VideoDescription extends React.Component {
-  // if (this.props.video.comments === undefined) {
-  //   return <p>Loading comments</p>;
-  // } else
-
   render() {
-    console.log(this.props);
     return (
       <div className="video-description">
         <h1 className="video-description__title">{this.props.video.title}</h1>
@@ -40,11 +34,20 @@ class VideoDescription extends React.Component {
             <p className="video-description__likes">{this.props.video.likes}</p>
           </div>
         </div>
+
         <p className="video-description__description">
           {this.props.video.description}
         </p>
 
-        <NewComment videoId={this.props.video.id} />
+        <NewComment
+          videoId={this.props.video.id}
+          fetchData={this.props.fetchData}
+          commentsLength={
+            this.props.video.comments
+              ? this.props.video.comments.length
+              : console.log("waiting")
+          }
+        />
 
         <ul className="comments-list">
           {this.props.video.comments ? (
@@ -56,21 +59,10 @@ class VideoDescription extends React.Component {
           ) : (
             <p>Loading Comments</p>
           )}
-
-          {/* {this.props.video.comments.map((comment, index) => (
-            <CommentItem key={index} commentData={comment} />
-          ))} */}
         </ul>
       </div>
     );
   }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.video.comments !== this.props.video.comments) {
-  //     console.log("updated!");
-  //     // this.render();
-  //   }
-  // }
 }
 
 export default VideoDescription;

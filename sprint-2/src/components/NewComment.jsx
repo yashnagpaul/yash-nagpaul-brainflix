@@ -14,13 +14,15 @@ class NewComment extends React.Component {
       comment: comment,
     };
 
-    // ISSUE: NewComment is not rendered through a route, hence there aren't any ROUTE props. How to receive routeprops?
+    // ISSUE: NewComment is not rendered through a route, hence there aren't any ROUTE props. How to compare routeprops?
     // SOLUTION: Instead, in VideoDescription, where we are calling NewComment, pass the {video.id} as props to NewComment.
 
-    axios.post(
-      `https://project-2-api.herokuapp.com/videos/${this.props.videoId}/comments?api_key=${apiKey}`,
-      commentObj
-    );
+    axios
+      .post(
+        `https://project-2-api.herokuapp.com/videos/${this.props.videoId}/comments?api_key=${apiKey}`,
+        commentObj
+      )
+      .then(this.props.fetchData);
   };
 
   render() {
@@ -28,7 +30,9 @@ class NewComment extends React.Component {
 
     return (
       <section className="new-comment">
-        <p className="new-comment__number-of-comments">3 Comments</p>
+        <p className="new-comment__number-of-comments">
+          {this.props.commentsLength} Comments
+        </p>
         <div className="new-comment__user-img-comment-container">
           <img
             className="new-comment__user-img"
@@ -52,11 +56,6 @@ class NewComment extends React.Component {
       </section>
     );
   }
-  // componentDidUpdate(_prevProps, prevState) {
-  //   if (this.state.comments !== prevState.comments) {
-  //     this.render();
-  //   }
-  // }
 }
 
 export default NewComment;

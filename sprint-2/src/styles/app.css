@@ -78,6 +78,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -743,7 +744,6 @@ a {
     line-height: 44px;
     width: 100%;
     padding-bottom: 30px;
-    border-bottom: 1px solid lightgray;
   }
 }
 
@@ -883,8 +883,9 @@ a {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
   }
 }
 
@@ -900,6 +901,12 @@ a {
 
 .upload-page__submit-btn:hover {
   background-color: #0065ad;
+}
+
+@media screen and (min-width: 768px) {
+  .upload-page__submit-btn {
+    width: 300px;
+  }
 }
 
 .upload-page__cancel-btn {
