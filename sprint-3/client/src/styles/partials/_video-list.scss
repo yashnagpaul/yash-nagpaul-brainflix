@@ -1,0 +1,48 @@
+.video-list {
+  list-style: none;
+  padding: 17px;
+  @include desktop {
+    width: 350px;
+  }
+
+  &__heading-label {
+    @include mobile-desk-h5;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    display: flex;
+    padding: 12px 0px 12px;
+  }
+
+  &__img {
+    width: 120px;
+    height: 75px;
+    border-radius: 5%;
+    margin-right: 20px;
+  }
+
+  &__title-name-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      max-width: 204px;
+    }
+  }
+
+  &__title {
+    @include desk-h4-para;
+    font-family: "avenir-demi";
+    max-height: 48px;
+    overflow: hidden;
+    margin-bottom: 7px;
+    @include tablet {
+      max-height: 54px;
+      @include desk-h3;
+    }
+  }
+
+  &__name {
+    @include desk-h4-para;
+  }
+}

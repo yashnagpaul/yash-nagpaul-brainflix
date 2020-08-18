@@ -1,0 +1,130 @@
+.upload-page {
+  padding: 17px;
+  @include desktop {
+    padding-left: 13vw;
+    padding-right: 12.4vw;
+  }
+
+  &__heading {
+    @include mobile-h1;
+    font-family: "avenir-bold";
+    padding-bottom: 17px;
+    @include tablet {
+      @include desk-h1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__wraps-thumbnail-title-description {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__thumbnail-label-container {
+    padding-bottom: 10px;
+    @include tablet {
+      padding-top: 30px;
+    }
+    @include desktop {
+      width: 35%;
+    }
+  }
+
+  &__thumbnail-label {
+    @include mobile-desk-h5;
+  }
+
+  &__thumbnail-img {
+    width: 100%;
+    height: 150px;
+    border-radius: 6px;
+    @include tablet {
+      width: 50%;
+      height: 25vw;
+    }
+    @include desktop {
+      width: 90%;
+      height: 200px;
+    }
+  }
+
+  &__title-description-container {
+    padding-bottom: 17px;
+    @include tablet {
+      padding-bottom: 0px;
+      height: 300px;
+    }
+    @include desktop {
+      width: 65%;
+      height: 200px;
+      padding-top: 30px;
+    }
+  }
+
+  &__title-label {
+    @include mobile-desk-h5;
+  }
+
+  &__title-input {
+    @extend .selected-text-input;
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    margin-bottom: 18px;
+  }
+
+  &__description-label {
+    @include mobile-desk-h5;
+  }
+
+  &__description-input {
+    @extend .selected-text-input;
+    width: 100%;
+    height: 170px;
+    padding: 20px;
+    @include desktop {
+      height: 110px;
+    }
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      margin-top: 10px;
+      width: 25vw;
+      flex-direction: row-reverse;
+      float: right;
+      align-items: baseline;
+      justify-content: right;
+    }
+  }
+
+  &__submit-btn {
+    @include primary-CTA;
+    margin-bottom: 17px;
+    @include tablet {
+      min-width: 150px;
+    }
+  }
+
+  &__cancel-btn {
+    @include mobile-h4-para;
+    color: $brainflix-blue-light;
+    font-family: "avenir-demi";
+    text-align: center;
+    width: 100%;
+    @include tablet {
+      padding: 50px;
+    }
+  }
+}
