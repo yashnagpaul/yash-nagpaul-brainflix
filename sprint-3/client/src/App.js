@@ -55,7 +55,7 @@ class App extends React.Component {
         this.setState({ mainVideo: response.data });
       });
     axios
-      .get("https://project-2-api.herokuapp.com/videos/?api_key=yash")
+      .get("http://localhost:8080/videos")
       .then((result) => this.setState({ sidebarVideos: result.data }));
   }
 

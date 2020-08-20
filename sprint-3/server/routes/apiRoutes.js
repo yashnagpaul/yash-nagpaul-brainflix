@@ -1,77 +1,50 @@
+//========== REQUIRED IMPORTS
+
 const express = require("express");
 const router = express.Router();
+const path = require("path");
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
-const listOfVideos = [
-  {
-    id: "1af0jruup5gu",
-    title: "BMX Rampage: 2018 Highlights",
-    channel: "Red Cow",
-    image: "https://i.imgur.com/l2Xfgpl.jpg",
-  },
-  {
-    id: "1ainjruutd1j",
-    title: "Become A Travel Pro In One Easy Lesson",
-    channel: "Todd Welch",
-    image: "https://i.imgur.com/5qyCZrD.jpg",
-  },
-  {
-    id: "1aivjruutn6a",
-    title: "Les Houches The Hidden Gem Of The Chamonix",
-    channel: "Cornelia Blair",
-    image: "https://i.imgur.com/yFS8EBr.jpg",
-  },
-  {
-    id: "1a3cjruucpf7",
-    title: "Travel Health Useful Medical Information For",
-    channel: "Glen Harper",
-    image: "https://i.imgur.com/MMDMgD7.jpg",
-  },
-  {
-    id: "1am3jruuwagz",
-    title: "Cheap Airline Tickets Great Ways To Save",
-    channel: "Emily Harper",
-    image: "https://i.imgur.com/ibLw5q5.jpg",
-  },
-  {
-    id: "1akljruuvhzt",
-    title: "Take A Romantic Break In A Boutique Hotel",
-    channel: "Ethan Owen",
-    image: "https://i.imgur.com/7rD6Mf6.jpg",
-  },
-  {
-    id: "1ae5jruuoc4q",
-    title: "Choose the Perfect Accommodations",
-    channel: "Lydia Perez",
-    image: "https://i.imgur.com/0hi3N4B.jpg",
-  },
-  {
-    id: "1a4kjruuedd9",
-    title: "Cruising Destination Ideas",
-    channel: "Timothy Austin",
-    image: "https://i.imgur.com/DDJNZNw.jpg",
-  },
-  {
-    id: "1a8qhruuzky3",
-    title: "Train Travel On Track For Safety",
-    channel: "Scotty Cranmer",
-    image: "https://i.imgur.com/i6S8m7I.jpg",
-  },
-];
+//========== VARIABLES
+
+const videoDataFile = path.join(__dirname, "../data/videos.json");
+const actualVideoData = JSON.parse(fs.readFileSync(videoDataFile));
+
+//========== WHEN CLIENT REQUESTS: GET from "/"
 
 router.get("/", (req, res) => {
   res.send("<h2>Welcome to Yash's API</h2><h4>Try the '/videos' path</h4>");
 });
 
+//========== WHEN CLIENT REQUESTS: GET from "/VIDEOS"
+
 router.get("/videos", (req, res) => {
-  res.json(listOfVideos);
+  res.json(actualVideoData);
 });
 
+//========== WHEN CLIENT REQUESTS: POST to "/VIDEOS"
 router.post("/videos", (req, res) => {
-  if (req.params.title && req.params.description) {
-    const newVid = { id: req.params.id, desc: req.params.description };
-    listOfVideos.push(newVid);
-  }
-  res.json({ status: "uploaded!" });
+  let newVideo = {};
+  if (
+    // we check that the client post request contains a valid TITLE and DESCRIPTION
+    req.body.title &&
+    req.body.description
+  ) {
+    // then we define the newVideo object
+    newVideo = {
+      id: uuidv4(),
+      title: req.body.title,
+      channel: req.body.channel,
+      image: req.body.image,
+    };
+    // then we push this new video object to our existing file with videos data
+    actualVideoData.push(newVideo);
+    fs.writeFileSync(videoDataFile, JSON.stringify(actualVideoData));
+  } // responding to the POST request
+  res.json({ newVideo });
 });
 
 module.exports = router;
+
+console.log(path.join(__dirname, "../data/videos.json"));

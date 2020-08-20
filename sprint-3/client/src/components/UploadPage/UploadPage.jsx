@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import Header from "../Header";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default class UploadPage extends Component {
   submitHandler = (event) => {
     event.preventDefault();
-    alert(
-      `TITLE:${this.refs.title.value} & DESCRIPTION:${this.refs.description.value}`
-    );
+    axios.post("http://localhost:8080/videos", {
+      title: `${this.refs.title.value}`,
+      description: `${this.refs.description.value}`,
+      channel: "Mohan Muruge",
+      image: "https://i.imgur.com/ENegK4F.jpg",
+    });
+    event.target.reset();
   };
 
   render() {
