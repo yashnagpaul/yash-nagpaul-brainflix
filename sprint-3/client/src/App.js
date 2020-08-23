@@ -9,8 +9,6 @@ import VideoDescription from "./components/VideoDescription";
 
 import "./styles/app.css";
 
-const apiKey = "8b50868d-4e62-4256-b64a-acfc383944fe";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -47,13 +45,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/1af0jruup5gu/?api_key=${apiKey}`
-      )
-      .then((response) => {
-        this.setState({ mainVideo: response.data });
-      });
+    axios.get(`http://localhost:8080/videos/1af0jruup5gu`).then((response) => {
+      this.setState({ mainVideo: response.data });
+    });
     axios
       .get("http://localhost:8080/videos")
       .then((result) => this.setState({ sidebarVideos: result.data }));
@@ -66,13 +60,9 @@ class App extends React.Component {
         pathToVideo = `${this.props.match.url}videos/1af0jruup5gu`;
       else pathToVideo = this.props.match.url;
 
-      axios
-        .get(
-          `https://project-2-api.herokuapp.com${pathToVideo}/?api_key=${apiKey}`
-        )
-        .then((response) => {
-          this.setState({ mainVideo: response.data });
-        });
+      axios.get(`http://localhost:8080${pathToVideo}`).then((response) => {
+        this.setState({ mainVideo: response.data });
+      });
     }
   }
 
@@ -85,13 +75,9 @@ class App extends React.Component {
     if (this.props.match.url === "/")
       pathToVideo = `${this.props.match.url}videos/1af0jruup5gu`;
     else pathToVideo = this.props.match.url;
-    axios
-      .get(
-        `https://project-2-api.herokuapp.com${pathToVideo}/?api_key=${apiKey}`
-      )
-      .then((response) => {
-        this.setState({ mainVideo: response.data });
-      });
+    axios.get(`http://localhost:8080${pathToVideo}`).then((response) => {
+      this.setState({ mainVideo: response.data });
+    });
   }
 }
 export default App;
