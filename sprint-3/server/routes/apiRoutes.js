@@ -1,10 +1,11 @@
-//========== REQUIRED IMPORTS
+//========== REQUIRED MODULES
 
 const express = require("express");
 const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
+// const { timeStamp } = require("console");
 
 //========== VARIABLES
 
@@ -37,6 +38,7 @@ router.get("/videos/:id", (req, res) => {
 
 router.post("/videos", (req, res) => {
   let newVideo = {};
+  let newVideoDeets = {};
   if (
     // we check that the client post request contains a valid TITLE and DESCRIPTION
     req.body.title &&
@@ -49,13 +51,31 @@ router.post("/videos", (req, res) => {
       channel: req.body.channel,
       image: req.body.image,
     };
+
+    newVideoDeets = {
+      id: newVideo.id,
+      title: req.body.title,
+      channel: req.body.channel,
+      image: req.body.image,
+      description: req.body.description,
+      views: "0",
+      likes: "0",
+      duration: "1:23",
+      video:
+        "https://www.dropbox.com/s/df2d2gf1dvnr5uj/Sample_1280x720_mp4.mp4",
+      timestamp: new Date(),
+      comments: [],
+    };
     // then we push this new video object to our existing file with videos data
     actualVideoData.push(newVideo);
     fs.writeFileSync(videoDataFile, JSON.stringify(actualVideoData));
-  } // responding to the POST request
-  res.json({ newVideo });
+
+    // we also push the details of the new video to our file that holds that kind of data
+    arrayOfVideoDetails.push(newVideoDeets);
+    fs.writeFileSync(videoDetailsFile, JSON.stringify(arrayOfVideoDetails));
+  }
+  // responding to the POST request
+  res.json({ arrayOfVideoDetails });
 });
 
 module.exports = router;
-
-console.log(path.join(__dirname, "../data/videos.json"));
