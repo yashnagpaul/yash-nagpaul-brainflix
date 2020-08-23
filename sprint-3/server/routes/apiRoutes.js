@@ -8,6 +8,8 @@ const { v4: uuidv4 } = require("uuid");
 
 //========== VARIABLES
 
+const videoDetailsFile = path.join(__dirname, "../data/videos-details.json");
+const arrayOfVideoDetails = JSON.parse(fs.readFileSync(videoDetailsFile));
 const videoDataFile = path.join(__dirname, "../data/videos.json");
 const actualVideoData = JSON.parse(fs.readFileSync(videoDataFile));
 
@@ -23,7 +25,16 @@ router.get("/videos", (req, res) => {
   res.json(actualVideoData);
 });
 
+//========== WHEN CLIENT REQUESTS: GET from "/VIDEOS/:ID"
+
+router.get("/videos/:id", (req, res) => {
+  res.json(
+    arrayOfVideoDetails.filter((videoObj) => videoObj.id === req.params.id)[0]
+  );
+});
+
 //========== WHEN CLIENT REQUESTS: POST to "/VIDEOS"
+
 router.post("/videos", (req, res) => {
   let newVideo = {};
   if (
