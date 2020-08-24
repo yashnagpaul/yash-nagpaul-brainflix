@@ -14,7 +14,7 @@ class MainVideo extends React.Component {
           <div className="main-video__controls">
             <button
               className="main-video__btn main-video__btn--play "
-              ref="play-btn"
+              // ref="play-btn"
               onClick={() => {
                 this.video.current.play();
               }}
